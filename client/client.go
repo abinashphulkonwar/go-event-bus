@@ -47,6 +47,7 @@ func (c *Client) Recive(scratch []byte) ([]byte, error) {
 	if res[len(res)-1] == '\n' {
 		return res[:n-1], nil
 	}
+	
 	lastPosition := bytes.LastIndexByte(res, '\n')
 	println(lastPosition)
 	return res[0:lastPosition], nil
